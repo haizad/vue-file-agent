@@ -2141,7 +2141,7 @@ var AjaxRequest = /** @class */ (function () {
             request.onerror = function () {
                 // Real errors are hidden from us by the browser
                 // onerror should only fire if it's a network error
-                reject(_this.createError('Network Error', null, request));
+                // reject(_this.createError('Network Error', null, request));
                 // Clean up request
                 request = null;
             };

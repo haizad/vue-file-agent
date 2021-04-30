@@ -115,7 +115,7 @@ class AjaxRequest {
       request.onerror = () => {
         // Real errors are hidden from us by the browser
         // onerror should only fire if it's a network error
-        reject(this.createError('Network Error', null, request));
+        // reject(this.createError('Network Error', null, request));
 
         // Clean up request
         (request as any) = null;
