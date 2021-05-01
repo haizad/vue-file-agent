@@ -57,6 +57,15 @@
         @touchstart="filenameClearPressed()"
         @mousedown="filenameClearPressed()"
       >
+        <VueFileIcon name="system-file-name-edit"></VueFileIcon>
+      </span>
+      <span
+        v-if="deletable"
+        class="file-delete"
+        @click="removeFileRecord(fileRecord)"
+        @touchstart="filenameClearPressed()"
+        @mousedown="filenameClearPressed()"
+      >
         <VueFileIcon name="system-close"></VueFileIcon>
       </span>
       <span class="file-name" @click="editFileName()">
