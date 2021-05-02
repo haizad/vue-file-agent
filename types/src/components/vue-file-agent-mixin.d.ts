@@ -36,6 +36,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     viewFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void;
     removeFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void;
     deleteFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void;
+    readBLOB(fileRecord: FileRecord): void;
     filenameChanged(fileRecord: FileRecord): void;
     checkValue(): void;
     sortStart(): void;
