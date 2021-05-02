@@ -489,6 +489,13 @@ export default {
       this.$refs.vueFileAgent.deleteUpload(this.uploadEndpoint, this.uploadHeaders, fileRecord);
     },
     getBlobFile: function(fileRecords) {
+
+      console.log(fileRecords)
+      var FileSaver = require('file-saver');
+// var blob = new Blob(["Hello, world!"], {type: "application/pdf;charset=utf-8"});
+// FileSaver.saveAs(fileRecords, "hello world.pdf");
+      FileSaver.saveAs(fileRecords);
+
       console.log(fileRecords);
       console.log(JSON.stringify(fileRecords));
       // manual handling
