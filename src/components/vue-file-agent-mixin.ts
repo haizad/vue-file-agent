@@ -462,22 +462,27 @@ export default Vue.extend({
         this.isDragging = false;
       }
     },
-    viewFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void {
+    // viewFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void {
 
-        console.log(fileRecordOrRaw.file)
+    //     console.log(fileRecordOrRaw.file)
   
-        var originalFile = fileRecordOrRaw.file;
+    //     var originalFile = fileRecordOrRaw.file;
   
-        var newFile  = new Blob([originalFile], {type: originalFile.type});
+    //     var newFile  = new Blob([originalFile], {type: originalFile.type});
+    //     this.$emit('get-blob', newFile);
+    //   // const rawFileRecord = this.getFileRecordRawInstance(fileRecordOrRaw);
+    //   // this.$emit('beforeview', rawFileRecord);
+    //   // if (!this.uploadUrl || this.auto === false) {
+    //   //   return;
+    //   // }
+    //   // this.deleteFileRecord(fileRecordOrRaw);
+    // },
+    viewFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void {
+      var originalFile = fileRecordOrRaw.file;
   
-        this.$emit('get-blob', newFile);
-      // alert('view')
-      // const rawFileRecord = this.getFileRecordRawInstance(fileRecordOrRaw);
-      // this.$emit('beforeview', rawFileRecord);
-      // if (!this.uploadUrl || this.auto === false) {
-      //   return;
-      // }
-      // this.deleteFileRecord(fileRecordOrRaw);
+      var newFile  = new Blob([originalFile], {type: originalFile.type});
+      this.$emit('get-blobs', newFile);
+      alert('text')
     },
     removeFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void {
       const rawFileRecord = this.getFileRecordRawInstance(fileRecordOrRaw);
@@ -509,6 +514,28 @@ export default Vue.extend({
           this.rawFileRecords.splice(i, 0, rawFileRecord);
         }
       );
+    },
+    // readBLOB(fileRecord: FileRecord) {
+    //   console.log(fileRecord.file)
+
+    //   var originalFile = fileRecord.file;
+
+    //   var newFile  = new Blob([originalFile], {type: originalFile.type});
+
+    //   console.log(newFile);
+    //   this.$emit('get-blob', newFile);
+    // },
+    readBLOB(fileRecord: FileRecord): void {
+      console.log(fileRecord)
+      this.$emit('get-blob-data', fileRecord);
+      // this.autoUpdateUpload(fileRecord).then(
+      //   (res) => {
+      //     /* no op */
+      //   },
+      //   (err) => {
+      //     fileRecord.customName = fileRecord.oldCustomName;
+      //   }
+      // );
     },
     filenameChanged(fileRecord: FileRecord): void {
       this.$emit('rename', FileRecord.toRawArray([fileRecord])[0]);

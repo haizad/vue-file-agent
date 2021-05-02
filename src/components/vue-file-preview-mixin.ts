@@ -115,7 +115,6 @@ export default Vue.extend({
 
       console.log(newFile);
       this.$emit('get-blob', newFile);
-
     },
 
     removeFileRecord(fileRecord: FileRecord) {

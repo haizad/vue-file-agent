@@ -30,6 +30,7 @@
       :linkable="true"
       :theme="theme"
       :uploadUrl="uploadUrl"
+      @get-blob="getBlobFile($event)"
       @select="filesSelected($event)"
       @delete="fileDeleted($event)"
       :sortable="sortable"
@@ -77,6 +78,14 @@ export default {
         }.bind(this),
         400,
       );
+    },
+    getBlobFile: function(fileRecords) {
+
+      alert('eee')
+      console.log(fileRecords);
+      console.log(JSON.stringify(fileRecords));
+      // manual handling
+      // this.$refs.vueFileInput.upload(this.uploadUrl, fileRecords);
     },
     filesSelected: function(fileRecords) {
       console.log(fileRecords);

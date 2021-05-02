@@ -78,7 +78,7 @@
                 :disabled="disabled"
                 :thumbnailSize="thumbnailSize"
                 :withCredentials="withCredentials"
-                @get-blob="blobName($event)"
+                @get-blob="readBLOB($event)"
                 @remove="removeFileRecord($event)"
                 @rename="filenameChanged($event)"
                 class=""

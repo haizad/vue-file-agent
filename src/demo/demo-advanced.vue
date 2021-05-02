@@ -194,6 +194,7 @@
           @delete="fileDeleted($event)"
           @beforedelete="onBeforeDelete($event)"
           @sort="onSort($event)"
+          @get-blob-data="getBlobFile($event)"
           @upload="uploadEvent('upload', $event)"
           @upload:error="uploadEvent('upload:error', $event)"
           @upload:delete="uploadEvent('upload:delete', $event)"
@@ -486,6 +487,12 @@ export default {
     deleteUploadedFile: function (fileRecord) {
       // Using the default uploader. You may use another uploader instead.
       this.$refs.vueFileAgent.deleteUpload(this.uploadEndpoint, this.uploadHeaders, fileRecord);
+    },
+    getBlobFile: function(fileRecords) {
+      console.log(fileRecords);
+      console.log(JSON.stringify(fileRecords));
+      // manual handling
+      // this.$refs.vueFileInput.upload(this.uploadUrl, fileRecords);
     },
     filesSelected: function (fileRecords) {
       console.log('filesSelected', fileRecords);
