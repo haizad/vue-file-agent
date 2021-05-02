@@ -48,8 +48,9 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     canAddMore: boolean;
     helpTextComputed: string;
     isDeletable: boolean;
+    isDownloadable: boolean;
     isSortable: boolean;
     hasMultiple: boolean;
     shouldRead: boolean;
-}, Record<"accept" | "auto" | "averageColor" | "capture" | "compact" | "deletable" | "disabled" | "editable" | "errorText" | "helpText" | "linkable" | "maxFiles" | "maxSize" | "meta" | "multiple" | "progress" | "read" | "readonly" | "resumable" | "sortable" | "theme" | "thumbnailSize" | "uploadConfig" | "uploadHeaders" | "uploadUrl" | "uploadWithCredentials" | "value", any>>;
+}, Record<"accept" | "auto" | "averageColor" | "capture" | "compact" | "deletable" | "downloadable" | "disabled" | "editable" | "errorText" | "helpText" | "linkable" | "maxFiles" | "maxSize" | "meta" | "multiple" | "progress" | "read" | "readonly" | "resumable" | "sortable" | "theme" | "thumbnailSize" | "uploadConfig" | "uploadHeaders" | "uploadUrl" | "uploadWithCredentials" | "value", any>>;
 export default _default;

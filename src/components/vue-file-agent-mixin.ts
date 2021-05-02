@@ -21,6 +21,7 @@ export default Vue.extend({
     'capture',
     'compact',
     'deletable',
+    'downloadable',
     'disabled',
     'editable',
     'errorText',
@@ -88,6 +89,12 @@ export default Vue.extend({
         return this.helpText;
       }
       return 'Choose ' + (this.hasMultiple ? 'files' : 'file') + ' or drag & drop here';
+    },
+    isDownloadable(): boolean {
+      if (typeof this.downloadable === 'string') {
+        return this.downloadable !== 'false';
+      }
+      return !!this.downloadable;
     },
     isDeletable(): boolean {
       if (typeof this.deletable === 'string') {
@@ -454,6 +461,23 @@ export default Vue.extend({
       if (dragCounter === 0) {
         this.isDragging = false;
       }
+    },
+    viewFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void {
+
+        console.log(fileRecordOrRaw.file)
+  
+        var originalFile = fileRecordOrRaw.file;
+  
+        var newFile  = new Blob([originalFile], {type: originalFile.type});
+  
+        this.$emit('get-blob', newFile);
+      // alert('view')
+      // const rawFileRecord = this.getFileRecordRawInstance(fileRecordOrRaw);
+      // this.$emit('beforeview', rawFileRecord);
+      // if (!this.uploadUrl || this.auto === false) {
+      //   return;
+      // }
+      // this.deleteFileRecord(fileRecordOrRaw);
     },
     removeFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void {
       const rawFileRecord = this.getFileRecordRawInstance(fileRecordOrRaw);

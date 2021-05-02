@@ -25,6 +25,7 @@
     <VueFileAgent
       v-model="fileRecords"
       :deletable="true"
+      :downloadable="true"
       :editable="true"
       :linkable="true"
       :theme="theme"

@@ -7,6 +7,7 @@ export default Vue.extend({
   props: [
     'value',
     'deletable',
+    'downloadable',
     'editable',
     'linkable',
     'errorText',
@@ -103,6 +104,18 @@ export default Vue.extend({
         fileRecord.isPlayingAv = false;
         fileRecord.stopAv = null;
       };
+    },
+
+    viewFileRecord(fileRecord: FileRecord) {
+      console.log(fileRecord.file)
+
+      var originalFile = fileRecord.file;
+
+      var newFile  = new Blob([originalFile], {type: originalFile.type});
+
+      console.log(newFile);
+      this.$emit('get-blob', newFile);
+
     },
 
     removeFileRecord(fileRecord: FileRecord) {

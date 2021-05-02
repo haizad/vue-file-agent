@@ -106,6 +106,10 @@
               <label class="custom-control-label" for="advanced-demo-editable">:editable</label>
             </div>
             <div class="custom-control custom-checkbox mt-1">
+              <input type="checkbox" class="custom-control-input" id="advanced-demo-downloadable" v-model="downloadable" />
+              <label class="custom-control-label" for="advanced-demo-downloadable">:downloadable</label>
+            </div>
+            <div class="custom-control custom-checkbox mt-1">
               <input type="checkbox" class="custom-control-input" id="advanced-demo-deletable" v-model="deletable" />
               <label class="custom-control-label" for="advanced-demo-deletable">:deletable</label>
             </div>
@@ -173,6 +177,7 @@
           :multiple="multiple"
           :meta="meta"
           :deletable="deletable"
+          :downloadable="downloadable"
           :editable="editable"
           :linkable="linkable"
           :sortable="sortable"
@@ -315,6 +320,7 @@ export default {
       meta: true,
       multiple: true,
       deletable: true,
+      downloadable: true,
       editable: true,
       linkable: true,
       sortable: false,

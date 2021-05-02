@@ -6,6 +6,7 @@
       'file-category-' + fileRecord.icon().category,
       { 'file-is-playing-av': fileRecord.isPlayingAv },
       { 'is-deletable': deletable === true },
+      { 'is-downloadable': downloadable === true },
       { 'is-editable': editable === true },
       { 'is-edit-input-focused': isEditInputFocused },
       { 'has-error': fileRecord.error },
@@ -51,13 +52,11 @@
       <span class="file-ext">{{ fileRecord.ext() }}</span>
       <span class="file-size">{{ fileRecord.size() }}</span>
       <span
-        v-if="deletable"
-        class="file-delete"
-        @click="removeFileRecord(fileRecord)"
-        @touchstart="filenameClearPressed()"
-        @mousedown="filenameClearPressed()"
+        v-if="downloadable"
+        class="file-download"
+        @click="viewFileRecord(fileRecord)"
       >
-        <VueFileIcon name="system-file-name-edit"></VueFileIcon>
+        <VueFileIcon name="system-view-file"></VueFileIcon>
       </span>
       <span
         v-if="deletable"
