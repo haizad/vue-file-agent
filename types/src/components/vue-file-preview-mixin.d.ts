@@ -8,6 +8,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     updateFileRecord(): void;
     createThumbnail(fileRecord: FileRecord, video: HTMLVideoElement): void;
     playAv(fileRecord: FileRecord): void;
+    viewFileRecord(fileRecord: FileRecord): void;
     removeFileRecord(fileRecord: FileRecord): void;
     editFileName(): void;
     editInputFocused(): void;
@@ -18,5 +19,5 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     dismissError(): void;
 }, {
     hasLinkableUrl: boolean;
-}, Record<"averageColor" | "deletable" | "downloadable" | "disabled" | "editable" | "errorText" | "linkable" | "thumbnailSize" | "value", any>>;
+}, Record<"averageColor" | "deletable" | "downloadable" | "disabled" | "editable" | "errorText" | "linkable" | "thumbnailSize" | "value" | "withCredentials", any>>;
 export default _default;

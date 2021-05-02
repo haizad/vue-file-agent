@@ -33,6 +33,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     dragEnter(event: DragEvent): void;
     dragOver(event: DragEvent): void;
     dragLeave(event: DragEvent): void;
+    viewFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void;
     removeFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void;
     deleteFileRecord(fileRecordOrRaw: FileRecord | RawFileRecord): void;
     filenameChanged(fileRecord: FileRecord): void;
@@ -45,10 +46,11 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
         collection: any;
     }): void;
 }, {
+    withCredentials: boolean | undefined;
     canAddMore: boolean;
     helpTextComputed: string;
-    isDeletable: boolean;
     isDownloadable: boolean;
+    isDeletable: boolean;
     isSortable: boolean;
     hasMultiple: boolean;
     shouldRead: boolean;

@@ -43,6 +43,7 @@ export declare class VueFileAgentPlugin implements Vue.PluginObject<any> {
         dragEnter(event: DragEvent): void;
         dragOver(event: DragEvent): void;
         dragLeave(event: DragEvent): void;
+        viewFileRecord(fileRecordOrRaw: FileRecord | import("./lib/file-record").RawFileRecord): void;
         removeFileRecord(fileRecordOrRaw: FileRecord | import("./lib/file-record").RawFileRecord): void;
         deleteFileRecord(fileRecordOrRaw: FileRecord | import("./lib/file-record").RawFileRecord): void;
         filenameChanged(fileRecord: FileRecord): void;
@@ -55,10 +56,11 @@ export declare class VueFileAgentPlugin implements Vue.PluginObject<any> {
             collection: any;
         }): void;
     }, {
+        withCredentials: boolean | undefined;
         canAddMore: boolean;
         helpTextComputed: string;
-        isDeletable: boolean;
         isDownloadable: boolean;
+        isDeletable: boolean;
         isSortable: boolean;
         hasMultiple: boolean;
         shouldRead: boolean;
@@ -97,6 +99,7 @@ export declare class VueFileAgentPlugin implements Vue.PluginObject<any> {
         dragEnter(event: DragEvent): void;
         dragOver(event: DragEvent): void;
         dragLeave(event: DragEvent): void;
+        viewFileRecord(fileRecordOrRaw: FileRecord | import("./lib/file-record").RawFileRecord): void;
         removeFileRecord(fileRecordOrRaw: FileRecord | import("./lib/file-record").RawFileRecord): void;
         deleteFileRecord(fileRecordOrRaw: FileRecord | import("./lib/file-record").RawFileRecord): void;
         filenameChanged(fileRecord: FileRecord): void;
@@ -109,10 +112,11 @@ export declare class VueFileAgentPlugin implements Vue.PluginObject<any> {
             collection: any;
         }): void;
     }, {
+        withCredentials: boolean | undefined;
         canAddMore: boolean;
         helpTextComputed: string;
-        isDeletable: boolean;
         isDownloadable: boolean;
+        isDeletable: boolean;
         isSortable: boolean;
         hasMultiple: boolean;
         shouldRead: boolean;
@@ -125,6 +129,7 @@ export declare class VueFileAgentPlugin implements Vue.PluginObject<any> {
         updateFileRecord(): void;
         createThumbnail(fileRecord: FileRecord, video: HTMLVideoElement): void;
         playAv(fileRecord: FileRecord): void;
+        viewFileRecord(fileRecord: FileRecord): void;
         removeFileRecord(fileRecord: FileRecord): void;
         editFileName(): void;
         editInputFocused(): void;
@@ -135,7 +140,7 @@ export declare class VueFileAgentPlugin implements Vue.PluginObject<any> {
         dismissError(): void;
     }, {
         hasLinkableUrl: boolean;
-    }, Record<"averageColor" | "deletable" | "downloadable" | "disabled" | "editable" | "errorText" | "linkable" | "thumbnailSize" | "value", any>>;
+    }, Record<"averageColor" | "deletable" | "downloadable" | "disabled" | "editable" | "errorText" | "linkable" | "thumbnailSize" | "value" | "withCredentials", any>>;
     install: Vue.PluginFunction<any>;
 }
 declare const vfaPlugin: VueFileAgentPlugin;
@@ -170,6 +175,7 @@ export declare const mixin: import("vue/types/vue").ExtendedVue<_Vue, {
     dragEnter(event: DragEvent): void;
     dragOver(event: DragEvent): void;
     dragLeave(event: DragEvent): void;
+    viewFileRecord(fileRecordOrRaw: FileRecord | import("./lib/file-record").RawFileRecord): void;
     removeFileRecord(fileRecordOrRaw: FileRecord | import("./lib/file-record").RawFileRecord): void;
     deleteFileRecord(fileRecordOrRaw: FileRecord | import("./lib/file-record").RawFileRecord): void;
     filenameChanged(fileRecord: FileRecord): void;
@@ -182,10 +188,11 @@ export declare const mixin: import("vue/types/vue").ExtendedVue<_Vue, {
         collection: any;
     }): void;
 }, {
+    withCredentials: boolean | undefined;
     canAddMore: boolean;
     helpTextComputed: string;
-    isDeletable: boolean;
     isDownloadable: boolean;
+    isDeletable: boolean;
     isSortable: boolean;
     hasMultiple: boolean;
     shouldRead: boolean;

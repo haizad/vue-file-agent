@@ -33,6 +33,7 @@ declare const icons: {
     'system-sortable-handle': SvgIcon;
     'system-file-av-play': SvgIcon;
     'system-file-name-edit': SvgIcon;
+    'system-view-file': SvgIcon;
 };
 export default icons;
 export declare const extensionsMap: any;
